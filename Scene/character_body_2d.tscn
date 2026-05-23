@@ -1,9 +1,59 @@
 [gd_scene format=3 uid="uid://coesdes61bru8"]
 
+[ext_resource type="Script" uid="uid://cjh76q54ppbw6" path="res://Scripts/character.gd" id="1_hnm5t"]
+[ext_resource type="Texture2D" uid="uid://cpff6vdfrgvts" path="res://Assets/Pack-Slimes v2.0/Characters (100x100)/Slime Green/idle.png" id="2_yx0hs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv00g"]
+atlas = ExtResource("2_yx0hs")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sid3l"]
+atlas = ExtResource("2_yx0hs")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbess"]
+atlas = ExtResource("2_yx0hs")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp4s8"]
+atlas = ExtResource("2_yx0hs")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hnm5t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv00g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sid3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbess")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp4s8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yx0hs"]
+a = Vector2(-6, 3)
+b = Vector2(7, 3)
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1810743037]
+motion_mode = 1
+script = ExtResource("1_hnm5t")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=181734342]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=471893036]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=7826490]
+position = Vector2(516, 370.00003)
+scale = Vector2(0.49000037, 0.49000037)
+sprite_frames = SubResource("SpriteFrames_hnm5t")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1768285070]
+position = Vector2(515, 382)
+shape = SubResource("SegmentShape2D_yx0hs")
