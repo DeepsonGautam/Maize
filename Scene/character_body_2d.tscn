@@ -39,21 +39,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_yx0hs"]
-a = Vector2(-6, 3)
-b = Vector2(7, 3)
+[sub_resource type="CircleShape2D" id="CircleShape2D_yx0hs"]
+radius = 5.0990195
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1810743037]
 motion_mode = 1
 script = ExtResource("1_hnm5t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=7826490]
-position = Vector2(516, 370.00003)
-scale = Vector2(0.49000037, 0.49000037)
+position = Vector2(513.25, 367.75)
+scale = Vector2(0.4349998, 0.44500017)
 sprite_frames = SubResource("SpriteFrames_hnm5t")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1768285070]
-position = Vector2(515, 382)
-shape = SubResource("SegmentShape2D_yx0hs")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1544334646]
+position = Vector2(513, 375)
+shape = SubResource("CircleShape2D_yx0hs")
