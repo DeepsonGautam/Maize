@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dbpb8wf8mfhp1" path="res://Assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_emx41"]
 [ext_resource type="Texture2D" uid="uid://17oo02q13nqx" path="res://Assets/anyone-need-some-space-backgrounds-for-their-games-heres-a-v0-3td1247uijw91.jpg" id="1_h7cfj"]
+[ext_resource type="Shader" uid="uid://dja4vmfejebk2" path="res://Scripts/world_1.gdshader" id="2_6a5p4"]
 [ext_resource type="Texture2D" uid="uid://boatebc6unw4k" path="res://Assets/tile set1/1 Tiles/Tile_06.png" id="2_ddf65"]
 [ext_resource type="PackedScene" uid="uid://coesdes61bru8" path="res://Scene/character_body_2d.tscn" id="2_dlwip"]
 [ext_resource type="Texture2D" uid="uid://bse6mpcuqvggg" path="res://Assets/tile set1/1 Tiles/Tile_16.png" id="3_h7cfj"]
@@ -9,8 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://btg6gjv1x4syy" path="res://Assets/tile set1/1 Tiles/Tile_33.png" id="5_6a5p4"]
 [ext_resource type="Texture2D" uid="uid://bu1l062g1xuik" path="res://Assets/tile set1/1 Tiles/Tile_34.png" id="6_nka0b"]
 [ext_resource type="Texture2D" uid="uid://c6hxl7fimxg5s" path="res://Assets/tile set1/1 Tiles/Tile_95.png" id="7_0gfnl"]
-[ext_resource type="Shader" uid="uid://d2l6cgurnq501" path="res://Scripts/world.gdshader" id="10_y56vo"]
 [ext_resource type="PackedScene" uid="uid://bg5iw2mor7c8e" path="res://Scene/Portal.tscn" id="11_6a5p4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0gfnl"]
+shader = ExtResource("2_6a5p4")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6a5p4"]
 texture = ExtResource("1_emx41")
@@ -352,8 +355,22 @@ sources/4 = SubResource("TileSetAtlasSource_a6mvv")
 sources/5 = SubResource("TileSetAtlasSource_s81y4")
 sources/6 = SubResource("TileSetAtlasSource_bfvnh")
 
+[sub_resource type="Shader" id="Shader_xju4f"]
+code = "shader_type canvas_item;
+
+void fragment() {
+    vec2 center = vec2(0.5, 0.5);
+    vec2 uv = UV - center;
+    
+    float distance_from_center = length(uv);
+    float vignette_strength = smoothstep(0.6, 0.15, distance_from_center);
+    float darkness = 0.89;
+    
+    COLOR = vec4(0.0, 0.0, 0.0, darkness * (1.0 - vignette_strength));
+}"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6a5p4"]
-shader = ExtResource("10_y56vo")
+shader = SubResource("Shader_xju4f")
 
 [sub_resource type="GDScript" id="GDScript_6a5p4"]
 
@@ -366,6 +383,7 @@ scale = Vector2(0.09646587, 0.08993056)
 texture = ExtResource("1_h7cfj")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1095322351]
+material = SubResource("ShaderMaterial_0gfnl")
 tile_set = SubResource("TileSet_ejll3")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 3, 1, 65536, 3, 1, 131072, 3, 1, 196608, 3, 1, 262144, 3, 1, 327680, 3, 1, 393216, 3, 1, 458752, 3, 1, 524288, 3, 1, 589824, 3, 1, 655360, 3, 1, 720896, 3, 1, 786432, 3, 1, 851968, 3, 1, 917504, 3, 1, 1, 3, 1, 524289, 3, 1, 917505, 3, 1, 2, 3, 1, 131074, 3, 1, 196610, 3, 1, 262146, 3, 1, 327682, 3, 1, 393218, 3, 1, 524290, 3, 1, 655362, 3, 1, 720898, 3, 1, 786434, 3, 1, 917506, 3, 1, 3, 3, 1, 131075, 3, 1, 393219, 3, 1, 655363, 3, 1, 917507, 3, 1, 4, 3, 1, 65540, 3, 1, 131076, 3, 1, 262148, 3, 1, 393220, 3, 1, 458756, 3, 1, 524292, 3, 1, 589828, 3, 1, 655364, 3, 1, 786436, 3, 1, 851972, 3, 1, 917508, 3, 1, 5, 3, 1, 262149, 3, 1, 786437, 3, 1, 917509, 3, 1, 6, 3, 1, 131078, 3, 1, 196614, 3, 1, 262150, 3, 1, 327686, 3, 1, 393222, 3, 1, 458758, 3, 1, 524294, 3, 1, 589830, 3, 1, 655366, 3, 1, 720902, 3, 1, 786438, 3, 1, 917510, 3, 1, 7, 3, 1, 131079, 3, 1, 655367, 3, 1, 917511, 3, 1, 8, 3, 1, 131080, 3, 1, 262152, 3, 1, 327688, 3, 1, 393224, 3, 1, 458760, 3, 1, 524296, 3, 1, 589832, 3, 1, 655368, 3, 1, 786440, 3, 1, 917512, 3, 1, 9, 3, 1, 131081, 3, 1, 458761, 3, 1, 786441, 3, 1, 917513, 3, 1, 10, 3, 1, 131082, 3, 1, 327690, 3, 1, 393226, 3, 1, 458762, 3, 1, 655370, 3, 1, 720906, 3, 1, 786442, 3, 1, 917514, 3, 1, 11, 3, 1, 131083, 3, 1, 196619, 3, 1, 655371, 3, 1, 917515, 3, 1, 12, 3, 1, 131084, 3, 1, 196620, 3, 1, 327692, 3, 1, 393228, 3, 1, 458764, 3, 1, 524300, 3, 1, 589836, 3, 1, 655372, 3, 1, 786444, 3, 1, 917516, 3, 1, 13, 3, 1, 655373, 3, 1, 786445, 3, 1, 851981, 3, 1, 917517, 3, 1, 14, 3, 1, 65550, 3, 1, 131086, 3, 1, 196622, 3, 1, 262158, 3, 1, 327694, 3, 1, 393230, 3, 1, 458766, 3, 1, 524302, 3, 1, 655374, 3, 1, 917518, 3, 1, 15, 3, 1, 655375, 3, 1, 917519, 3, 1, 16, 3, 1, 131088, 3, 1, 196624, 3, 1, 262160, 3, 1, 327696, 3, 1, 393232, 3, 1, 458768, 3, 1, 524304, 3, 1, 589840, 3, 1, 655376, 3, 1, 720912, 3, 1, 786448, 3, 1, 917520, 3, 1, 17, 3, 1, 262161, 3, 1, 917521, 3, 1, 18, 3, 1, 65554, 3, 1, 131090, 3, 1, 262162, 3, 1, 393234, 3, 1, 589842, 3, 1, 655378, 3, 1, 720914, 3, 1, 786450, 3, 1, 917522, 3, 1, 19, 3, 1, 262163, 3, 1, 393235, 3, 1, 786451, 3, 1, 917523, 3, 1, 20, 3, 1, 131092, 3, 1, 196628, 3, 1, 262164, 3, 1, 327700, 3, 1, 393236, 3, 1, 458772, 3, 1, 524308, 3, 1, 589844, 3, 1, 655380, 3, 1, 786452, 3, 1, 851988, 3, 1, 917524, 3, 1, 21, 3, 1, 655381, 3, 1, 917525, 3, 1, 22, 3, 1, 65558, 3, 1, 131094, 3, 1, 196630, 3, 1, 262166, 3, 1, 327702, 3, 1, 393238, 3, 1, 458774, 3, 1, 524310, 3, 1, 655382, 3, 1, 720918, 3, 1, 786454, 3, 1, 917526, 3, 1, 23, 3, 1, 917527, 3, 1, 24, 3, 1, 65560, 3, 1, 131096, 3, 1, 196632, 3, 1, 262168, 3, 1, 327704, 3, 1, 393240, 3, 1, 458776, 3, 1, 524312, 3, 1, 589848, 3, 1, 655384, 3, 1, 720920, 3, 1, 786456, 3, 1, 851992, 3, 1, 917528, 3, 1, 524306, 3, 1)

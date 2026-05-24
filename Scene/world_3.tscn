@@ -1,17 +1,34 @@
 [gd_scene format=3 uid="uid://r8h5lkf2i7we"]
 
 [ext_resource type="Texture2D" uid="uid://17oo02q13nqx" path="res://Assets/anyone-need-some-space-backgrounds-for-their-games-heres-a-v0-3td1247uijw91.jpg" id="1_djbjd"]
-[ext_resource type="Shader" uid="uid://d2l6cgurnq501" path="res://Scripts/world.gdshader" id="2_8kjy2"]
+[ext_resource type="Shader" uid="uid://dhmfedhptynn0" path="res://Scripts/world_3.gdshader" id="2_ihoyb"]
 [ext_resource type="Texture2D" uid="uid://dvv1ihvyr6dx7" path="res://Assets/tile set1/1 Tiles/Tile_15.png" id="3_3ejuf"]
 [ext_resource type="Texture2D" uid="uid://dv2i5qwnlidki" path="res://Assets/tile set1/1 Tiles/Tile_24.png" id="4_cxmdt"]
 [ext_resource type="Texture2D" uid="uid://6mtmfngwh0r5" path="res://Assets/tile set1/1 Tiles/Tile_18.png" id="5_ihoyb"]
 [ext_resource type="PackedScene" uid="uid://bg5iw2mor7c8e" path="res://Scene/Portal.tscn" id="6_ihoyb"]
 [ext_resource type="PackedScene" uid="uid://coesdes61bru8" path="res://Scene/character_body_2d.tscn" id="7_tyj58"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ajp3"]
-shader = ExtResource("2_8kjy2")
+[sub_resource type="Shader" id="Shader_xju4f"]
+code = "shader_type canvas_item;
+
+void fragment() {
+    vec2 center = vec2(0.5, 0.5);
+    vec2 uv = UV - center;
+    
+    float distance_from_center = length(uv);
+    float vignette_strength = smoothstep(0.6, 0.15, distance_from_center);
+    float darkness = 0.89;
+    
+    COLOR = vec4(0.0, 0.0, 0.0, darkness * (1.0 - vignette_strength));
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihoyb"]
+shader = SubResource("Shader_xju4f")
 
 [sub_resource type="GDScript" id="GDScript_3ejuf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvsve"]
+shader = ExtResource("2_ihoyb")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tyj58"]
 texture = ExtResource("3_3ejuf")
@@ -59,7 +76,7 @@ texture = ExtResource("1_djbjd")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2117924644]
 
 [node name="Vignette" type="ColorRect" parent="CanvasLayer" unique_id=192823436]
-material = SubResource("ShaderMaterial_1ajp3")
+material = SubResource("ShaderMaterial_ihoyb")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -69,6 +86,7 @@ script = SubResource("GDScript_3ejuf")
 metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1128151975]
+material = SubResource("ShaderMaterial_cvsve")
 position = Vector2(351, 172)
 tile_set = SubResource("TileSet_ar7p2")
 format = 2
