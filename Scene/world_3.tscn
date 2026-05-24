@@ -49,6 +49,7 @@ sources/1 = SubResource("TileSetAtlasSource_cvsve")
 sources/2 = SubResource("TileSetAtlasSource_adjqv")
 
 [node name="World3" type="Node2D" unique_id=220042321]
+position = Vector2(195, 59)
 
 [node name="AnyoneNeedSomeSpaceBackgroundsForTheirGamesHeresAV03Td1247Uijw91" type="Sprite2D" parent="." unique_id=968890745]
 position = Vector2(383.00006, 262)

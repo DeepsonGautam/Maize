@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 const SPEED = 270.0
 
+func _ready():
+	add_to_group("player")
+
+
 func _physics_process(_delta):
 	var direction = Vector2.ZERO
 	

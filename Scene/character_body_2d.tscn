@@ -40,9 +40,9 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yx0hs"]
-radius = 5.0990195
+radius = 6.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1810743037]
+[node name="character" type="CharacterBody2D" unique_id=1810743037]
 motion_mode = 1
 script = ExtResource("1_hnm5t")
 
