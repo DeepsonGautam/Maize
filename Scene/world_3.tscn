@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://r8h5lkf2i7we"]
 
 [ext_resource type="Texture2D" uid="uid://17oo02q13nqx" path="res://Assets/anyone-need-some-space-backgrounds-for-their-games-heres-a-v0-3td1247uijw91.jpg" id="1_djbjd"]
+[ext_resource type="Script" uid="uid://gfqdvb8jv3n0" path="res://Scripts/canvas_layer3.gd" id="2_cvsve"]
 [ext_resource type="Shader" uid="uid://dhmfedhptynn0" path="res://Scripts/world_3.gdshader" id="2_ihoyb"]
-[ext_resource type="Texture2D" uid="uid://dvv1ihvyr6dx7" path="res://Assets/tile set1/1 Tiles/Tile_15.png" id="3_3ejuf"]
-[ext_resource type="Texture2D" uid="uid://dv2i5qwnlidki" path="res://Assets/tile set1/1 Tiles/Tile_24.png" id="4_cxmdt"]
-[ext_resource type="Texture2D" uid="uid://6mtmfngwh0r5" path="res://Assets/tile set1/1 Tiles/Tile_18.png" id="5_ihoyb"]
+[ext_resource type="Texture2D" uid="uid://dvv1ihvyr6dx7" path="res://Assets/tile set2/1 Tiles/Tile_15.png" id="3_3ejuf"]
+[ext_resource type="Texture2D" uid="uid://d1nj1dvce074w" path="res://Assets/exit.png" id="3_adjqv"]
+[ext_resource type="Texture2D" uid="uid://bh3p3l8gf3qbi" path="res://Assets/rotate.png" id="4_adjqv"]
+[ext_resource type="Texture2D" uid="uid://dv2i5qwnlidki" path="res://Assets/tile set2/1 Tiles/Tile_24.png" id="4_cxmdt"]
+[ext_resource type="Texture2D" uid="uid://6mtmfngwh0r5" path="res://Assets/tile set2/1 Tiles/Tile_18.png" id="5_ihoyb"]
 [ext_resource type="PackedScene" uid="uid://bg5iw2mor7c8e" path="res://Scene/Portal.tscn" id="6_ihoyb"]
 [ext_resource type="PackedScene" uid="uid://coesdes61bru8" path="res://Scene/character_body_2d.tscn" id="7_tyj58"]
 
@@ -74,6 +77,7 @@ scale = Vector2(0.13570668, 0.1265129)
 texture = ExtResource("1_djbjd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2117924644]
+script = ExtResource("2_cvsve")
 
 [node name="Vignette" type="ColorRect" parent="CanvasLayer" unique_id=192823436]
 material = SubResource("ShaderMaterial_ihoyb")
@@ -84,6 +88,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_3ejuf")
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer" unique_id=2046840713]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1105.0
+offset_top = 11.0
+offset_right = 1105.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.065, 0.065)
+texture_normal = ExtResource("3_adjqv")
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer" unique_id=1244805280]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1113.0
+offset_top = 55.000004
+offset_right = 473.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.06, 0.06)
+texture_normal = ExtResource("4_adjqv")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1128151975]
 material = SubResource("ShaderMaterial_cvsve")
@@ -104,3 +134,6 @@ position = Vector2(513, 383)
 zoom = Vector2(5, 5)
 limit_enabled = false
 position_smoothing_enabled = true
+
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureButton2" to="CanvasLayer" method="_on_texture_button_2_pressed"]

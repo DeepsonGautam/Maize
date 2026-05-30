@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Maize"
-run/main_scene="uid://cynswsosx5ae3"
+run/main_scene="uid://dx6fr76wquonm"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

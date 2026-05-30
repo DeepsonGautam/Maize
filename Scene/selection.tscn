@@ -133,6 +133,30 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_size = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efman"]
+bg_color = Color(0.60788155, 3.008172e-07, 2.8878452e-07, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7pql5"]
+bg_color = Color(0.2784314, 0, 0, 0.89411765)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3vo7"]
+bg_color = Color(0.41568628, 0, 0.039215688, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 4
+
 [node name="Selection" type="Control" unique_id=1441211103]
 layout_mode = 3
 anchors_preset = 15
@@ -170,7 +194,7 @@ label_settings = SubResource("LabelSettings_efman")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=49945869]
 
 [node name="portal" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1712052584]
-position = Vector2(564, 747.00006)
+position = Vector2(567, 752.00006)
 scale = Vector2(16.335938, 4.460938)
 sprite_frames = SubResource("SpriteFrames_7pql5")
 animation = &"idle"
@@ -285,10 +309,19 @@ text = " 7 "
 
 [node name="8" type="Button" parent="HBoxContainer2" unique_id=839104064]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.85882354, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_w11ju")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_gys2o")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_w11ju")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6u6v1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_efman")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7pql5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p3vo7")
 text = " 8 "
+
+[connection signal="pressed" from="HBoxContainer/1" to="." method="_on__pressed"]
+[connection signal="pressed" from="HBoxContainer/2" to="." method="_on__pressed2"]
+[connection signal="pressed" from="HBoxContainer/3" to="." method="_on__pressed3"]
+[connection signal="pressed" from="HBoxContainer/4" to="." method="_on__pressed4"]
+[connection signal="pressed" from="HBoxContainer2/5" to="." method="_on__pressed5"]
+[connection signal="pressed" from="HBoxContainer2/6" to="." method="_on__pressed6"]
+[connection signal="pressed" from="HBoxContainer2/7" to="." method="_on__pressed7"]
+[connection signal="pressed" from="HBoxContainer2/8" to="." method="_on__pressed8"]

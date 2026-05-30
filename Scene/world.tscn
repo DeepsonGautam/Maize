@@ -3,14 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://dbpb8wf8mfhp1" path="res://Assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_emx41"]
 [ext_resource type="Texture2D" uid="uid://17oo02q13nqx" path="res://Assets/anyone-need-some-space-backgrounds-for-their-games-heres-a-v0-3td1247uijw91.jpg" id="1_h7cfj"]
 [ext_resource type="Shader" uid="uid://dja4vmfejebk2" path="res://Scripts/world_1.gdshader" id="2_6a5p4"]
-[ext_resource type="Texture2D" uid="uid://boatebc6unw4k" path="res://Assets/tile set1/1 Tiles/Tile_06.png" id="2_ddf65"]
+[ext_resource type="Texture2D" uid="uid://boatebc6unw4k" path="res://Assets/tile set2/1 Tiles/Tile_06.png" id="2_ddf65"]
 [ext_resource type="PackedScene" uid="uid://coesdes61bru8" path="res://Scene/character_body_2d.tscn" id="2_dlwip"]
-[ext_resource type="Texture2D" uid="uid://bse6mpcuqvggg" path="res://Assets/tile set1/1 Tiles/Tile_16.png" id="3_h7cfj"]
-[ext_resource type="Texture2D" uid="uid://dd8uftgbjnmcw" path="res://Assets/tile set1/1 Tiles/Tile_23.png" id="4_y56vo"]
-[ext_resource type="Texture2D" uid="uid://btg6gjv1x4syy" path="res://Assets/tile set1/1 Tiles/Tile_33.png" id="5_6a5p4"]
-[ext_resource type="Texture2D" uid="uid://bu1l062g1xuik" path="res://Assets/tile set1/1 Tiles/Tile_34.png" id="6_nka0b"]
-[ext_resource type="Texture2D" uid="uid://c6hxl7fimxg5s" path="res://Assets/tile set1/1 Tiles/Tile_95.png" id="7_0gfnl"]
+[ext_resource type="Texture2D" uid="uid://bse6mpcuqvggg" path="res://Assets/tile set2/1 Tiles/Tile_16.png" id="3_h7cfj"]
+[ext_resource type="Texture2D" uid="uid://dd8uftgbjnmcw" path="res://Assets/tile set2/1 Tiles/Tile_23.png" id="4_y56vo"]
+[ext_resource type="Texture2D" uid="uid://btg6gjv1x4syy" path="res://Assets/tile set2/1 Tiles/Tile_33.png" id="5_6a5p4"]
+[ext_resource type="Texture2D" uid="uid://bu1l062g1xuik" path="res://Assets/tile set2/1 Tiles/Tile_34.png" id="6_nka0b"]
+[ext_resource type="Texture2D" uid="uid://c6hxl7fimxg5s" path="res://Assets/tile set2/1 Tiles/Tile_95.png" id="7_0gfnl"]
+[ext_resource type="Script" uid="uid://cmljngh3lymr2" path="res://Scripts/canvas_layer.gd" id="11_0gfnl"]
 [ext_resource type="PackedScene" uid="uid://bg5iw2mor7c8e" path="res://Scene/Portal.tscn" id="11_6a5p4"]
+[ext_resource type="Texture2D" uid="uid://d1nj1dvce074w" path="res://Assets/exit.png" id="12_0gfnl"]
+[ext_resource type="Texture2D" uid="uid://bh3p3l8gf3qbi" path="res://Assets/rotate.png" id="13_kufhj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0gfnl"]
 shader = ExtResource("2_6a5p4")
@@ -400,6 +403,7 @@ position_smoothing_enabled = true
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=26830101]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1776526130]
+script = ExtResource("11_0gfnl")
 
 [node name="Vignette" type="ColorRect" parent="CanvasLayer" unique_id=735855206]
 material = SubResource("ShaderMaterial_6a5p4")
@@ -411,6 +415,35 @@ grow_vertical = 2
 script = SubResource("GDScript_6a5p4")
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer" unique_id=986735436]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1112.0
+offset_top = 11.0
+offset_right = 472.0
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.065, 0.065)
+texture_normal = ExtResource("12_0gfnl")
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer" unique_id=1010469828]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1113.0
+offset_top = 55.000004
+offset_right = 473.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.06, 0.06)
+texture_normal = ExtResource("13_kufhj")
+
 [node name="Portal" parent="." unique_id=1567927448 instance=ExtResource("11_6a5p4")]
 position = Vector2(317, 5)
 scale = Vector2(0.40625, 0.40625)
+
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureButton2" to="CanvasLayer" method="_on_texture_button_2_pressed"]

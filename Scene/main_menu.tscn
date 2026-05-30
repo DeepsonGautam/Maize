@@ -215,14 +215,14 @@ position = Vector2(291, 444)
 scale = Vector2(2.15625, 2.15625)
 sprite_frames = SubResource("SpriteFrames_47k5r")
 animation = &"idle"
-frame_progress = 0.46249193
+frame_progress = 0.003435054
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=899069591]
 position = Vector2(1044, 300)
 scale = Vector2(1.92, 1.92)
 sprite_frames = SubResource("SpriteFrames_pvidh")
 animation = &"player"
-frame_progress = 0.6610565
+frame_progress = 0.85047114
 
 [connection signal="pressed" from="levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
