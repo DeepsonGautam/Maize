@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://ctcub6v7etao6"]
+
+[ext_resource type="Script" uid="uid://dbdi05cvep3ai" path="res://Scripts/selection.gd" id="1_6pdfc"]
+[ext_resource type="Texture2D" uid="uid://cvu0yojfm6upk" path="res://Assets/portal/sprite-sheet.png" id="2_6pdfc"]
+[ext_resource type="Texture2D" uid="uid://cpff6vdfrgvts" path="res://Assets/Pack-Slimes v2.0/Characters (100x100)/Slime Green/idle.png" id="3_gys2o"]
+[ext_resource type="FontFile" uid="uid://52fdw542q64j" path="res://Assets/Title/Kaijuz.otf" id="3_w11ju"]
+[ext_resource type="Texture2D" uid="uid://dll3r7oncj5mq" path="res://Assets/Second.png" id="4_6pdfc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6u6v1"]
+texture = ExtResource("4_6pdfc")
+modulate_color = Color(0.365339, 0.365339, 0.365339, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_efman"]
+font = ExtResource("3_w11ju")
+font_size = 68
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvidh"]
+atlas = ExtResource("2_6pdfc")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hptlk"]
+atlas = ExtResource("2_6pdfc")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqads"]
+atlas = ExtResource("2_6pdfc")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2f1d"]
+atlas = ExtResource("2_6pdfc")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejkra"]
+atlas = ExtResource("2_6pdfc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yok32"]
+atlas = ExtResource("2_6pdfc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klvvj"]
+atlas = ExtResource("2_6pdfc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7pql5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvidh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hptlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqads")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2f1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejkra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yok32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klvvj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47k5r"]
+atlas = ExtResource("3_gys2o")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hag5k"]
+atlas = ExtResource("3_gys2o")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ckpx"]
+atlas = ExtResource("3_gys2o")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shpw1"]
+atlas = ExtResource("3_gys2o")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p3vo7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47k5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hag5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ckpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shpw1")
+}],
+"loop": true,
+"name": &"player",
+"speed": 5.0
+}]
+
+[node name="Selection" type="Control" unique_id=1441211103]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6pdfc")
+
+[node name="Panel" type="Panel" parent="." unique_id=1540540227]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6u6v1")
+
+[node name="Label" type="Label" parent="." unique_id=958784455]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -204.5
+offset_right = 121.0
+offset_bottom = -133.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "! Levels !"
+label_settings = SubResource("LabelSettings_efman")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=49945869]
+
+[node name="portal" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1712052584]
+position = Vector2(291, 444)
+scale = Vector2(2.15625, 2.15625)
+sprite_frames = SubResource("SpriteFrames_7pql5")
+animation = &"idle"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1122231098]
+position = Vector2(1044, 300)
+scale = Vector2(1.92, 1.92)
+sprite_frames = SubResource("SpriteFrames_p3vo7")
+animation = &"player"

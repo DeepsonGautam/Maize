@@ -7,5 +7,5 @@ void fragment() {
     float vignette_strength = smoothstep(0.6, 0.15, distance_from_center);
     float darkness = 0.89;
 
-    COLOR = vec4(0.0, 0.0, 0.0, darkness * (1.0 - vignette_strength));
+    COLOR = vec4(0.0, 0.0, 0.0, darkness * (1.1 - vignette_strength));
 }
