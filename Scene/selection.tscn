@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cpff6vdfrgvts" path="res://Assets/Pack-Slimes v2.0/Characters (100x100)/Slime Green/idle.png" id="3_gys2o"]
 [ext_resource type="FontFile" uid="uid://52fdw542q64j" path="res://Assets/Title/Kaijuz.otf" id="3_w11ju"]
 [ext_resource type="Texture2D" uid="uid://dll3r7oncj5mq" path="res://Assets/Second.png" id="4_6pdfc"]
+[ext_resource type="FontFile" uid="uid://b2ui0ocjl164w" path="res://Assets/numbers/KR Toon Numbers.ttf" id="6_w11ju"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6u6v1"]
 texture = ExtResource("4_6pdfc")
@@ -12,7 +13,8 @@ modulate_color = Color(0.365339, 0.365339, 0.365339, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_efman"]
 font = ExtResource("3_w11ju")
-font_size = 68
+font_size = 77
+font_color = Color(0.6156863, 1, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pvidh"]
 atlas = ExtResource("2_6pdfc")
@@ -68,7 +70,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 9.0
+"speed": 16.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_47k5r"]
@@ -107,6 +109,30 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gys2o"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w11ju"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u6v1"]
+bg_color = Color(0.32156864, 0.32156864, 0.32156864, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 4
+
 [node name="Selection" type="Control" unique_id=1441211103]
 layout_mode = 3
 anchors_preset = 15
@@ -144,8 +170,8 @@ label_settings = SubResource("LabelSettings_efman")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=49945869]
 
 [node name="portal" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1712052584]
-position = Vector2(291, 444)
-scale = Vector2(2.15625, 2.15625)
+position = Vector2(564, 747.00006)
+scale = Vector2(16.335938, 4.460938)
 sprite_frames = SubResource("SpriteFrames_7pql5")
 animation = &"idle"
 
@@ -154,3 +180,115 @@ position = Vector2(1044, 300)
 scale = Vector2(1.92, 1.92)
 sprite_frames = SubResource("SpriteFrames_p3vo7")
 animation = &"player"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1539945847]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.5
+offset_top = -45.0
+offset_right = 401.5
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 57
+alignment = 1
+
+[node name="1" type="Button" parent="HBoxContainer" unique_id=610507724]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_w11ju")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_gys2o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w11ju")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6u6v1")
+text = " 1 "
+
+[node name="2" type="Button" parent="HBoxContainer" unique_id=1593421459]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_w11ju")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_gys2o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w11ju")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6u6v1")
+text = " 2 "
+
+[node name="3" type="Button" parent="HBoxContainer" unique_id=993703428]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_w11ju")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_gys2o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w11ju")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6u6v1")
+text = " 3 "
+
+[node name="4" type="Button" parent="HBoxContainer" unique_id=145076044]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_w11ju")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_gys2o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w11ju")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6u6v1")
+text = " 4 "
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1955656100]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.5
+offset_top = 78.0
+offset_right = 401.5
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 57
+alignment = 1
+
+[node name="5" type="Button" parent="HBoxContainer2" unique_id=2041630878]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_w11ju")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_gys2o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w11ju")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6u6v1")
+text = " 5 "
+
+[node name="6" type="Button" parent="HBoxContainer2" unique_id=1937853238]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_w11ju")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_gys2o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w11ju")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6u6v1")
+text = " 6 "
+
+[node name="7" type="Button" parent="HBoxContainer2" unique_id=1397108340]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_w11ju")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_gys2o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w11ju")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6u6v1")
+text = " 7 "
+
+[node name="8" type="Button" parent="HBoxContainer2" unique_id=839104064]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_w11ju")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_gys2o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w11ju")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6u6v1")
+text = " 8 "

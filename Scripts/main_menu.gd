@@ -5,7 +5,7 @@ func _ready():
 
 
 func _on_levels_pressed() -> void:
-	pass
+	get_tree().change_scene_to_file("res://Scene/selection.tscn")
 
 
 func _on_exit_pressed() -> void:
