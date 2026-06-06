@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cvu0yojfm6upk" path="res://Assets/portal/sprite-sheet.png" id="1_gtw4s"]
 [ext_resource type="Script" uid="uid://b4frdaspb6vkw" path="res://Scripts/area_2d.gd" id="2_adss0"]
+[ext_resource type="AudioStream" uid="uid://eayfhy3tbfop" path="res://Assets/music/level_change.mp3" id="3_10vg6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gtw4s"]
 radius = 17.0
@@ -88,5 +89,8 @@ frame_progress = 0.67117566
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=987253367]
 position = Vector2(146, 51)
 shape = SubResource("CapsuleShape2D_5cysn")
+
+[node name="Portal2" type="AudioStreamPlayer" parent="." unique_id=1074168648]
+stream = ExtResource("3_10vg6")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

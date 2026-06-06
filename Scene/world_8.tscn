@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bg5iw2mor7c8e" path="res://Scene/Portal.tscn" id="9_6bsqd"]
 [ext_resource type="Script" uid="uid://pkt6qknvl7sc" path="res://Scripts/canvas_layer8.gd" id="9_qfe6g"]
 [ext_resource type="Texture2D" uid="uid://d1nj1dvce074w" path="res://Assets/exit.png" id="11_f6nah"]
+[ext_resource type="Texture2D" uid="uid://bh3p3l8gf3qbi" path="res://Assets/rotate.png" id="12_f6nah"]
+[ext_resource type="AudioStream" uid="uid://chec55107ps6r" path="res://Assets/music/Main menu.mp3" id="15_dq1x1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hobvq"]
 shader = ExtResource("2_cdwk4")
@@ -1033,20 +1035,31 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer" unique_id=752179629]
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1105.0
+offset_left = -50.0
 offset_top = 11.0
-offset_right = 1105.0
-offset_bottom = 11.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 462.0
+offset_bottom = 523.0
+grow_horizontal = 0
 scale = Vector2(0.065, 0.065)
 texture_normal = ExtResource("11_f6nah")
 
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer" unique_id=1244533598]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -48.0
+offset_top = 54.0
+offset_right = 464.0
+offset_bottom = 566.0
+grow_horizontal = 0
+scale = Vector2(0.06, 0.06)
+texture_normal = ExtResource("12_f6nah")
+
 [node name="CharacterBody2D" parent="." unique_id=1810743037 instance=ExtResource("8_p7iww")]
-position = Vector2(134, -95)
+position = Vector2(133, -94)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=246469757]
 position = Vector2(514, 376)
@@ -1058,4 +1071,10 @@ position_smoothing_enabled = true
 position = Vector2(303, 321.00003)
 scale = Vector2(0.40625, 0.40625)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=357353428]
+stream = ExtResource("15_dq1x1")
+autoplay = true
+parameters/looping = true
+
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureButton2" to="CanvasLayer" method="_on_texture_button_2_pressed"]

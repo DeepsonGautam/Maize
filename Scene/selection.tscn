@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://52fdw542q64j" path="res://Assets/Title/Kaijuz.otf" id="3_w11ju"]
 [ext_resource type="Texture2D" uid="uid://dll3r7oncj5mq" path="res://Assets/Second.png" id="4_6pdfc"]
 [ext_resource type="FontFile" uid="uid://b2ui0ocjl164w" path="res://Assets/numbers/KR Toon Numbers.ttf" id="6_w11ju"]
+[ext_resource type="AudioStream" uid="uid://cu63qynfe4kdx" path="res://Assets/music/Ambient.mp3" id="7_6u6v1"]
+[ext_resource type="AudioStream" uid="uid://resx71d01qnh" path="res://Assets/music/button click.mp3" id="8_efman"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6u6v1"]
 texture = ExtResource("4_6pdfc")
@@ -316,6 +318,14 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_efman")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7pql5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_p3vo7")
 text = " 8 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=519594231]
+stream = ExtResource("7_6u6v1")
+autoplay = true
+parameters/looping = true
+
+[node name="clicked" type="AudioStreamPlayer" parent="." unique_id=1641018219]
+stream = ExtResource("8_efman")
 
 [connection signal="pressed" from="HBoxContainer/1" to="." method="_on__pressed"]
 [connection signal="pressed" from="HBoxContainer/2" to="." method="_on__pressed2"]

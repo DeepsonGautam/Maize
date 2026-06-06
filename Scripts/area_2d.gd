@@ -18,4 +18,7 @@ func _on_body_entered(body):
 			get_tree().change_scene_to_file("res://Scene/world_3.tscn")
 		elif current_scene == "res://Scene/world_3.tscn":
 			get_tree().change_scene_to_file("res://Scene/world_4.tscn")
+		elif current_scene == "res://Scene/world_4.tscn":
+			get_tree().change_scene_to_file("res://Scene/main_menu.tscn")
+			
 			

@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://bg5iw2mor7c8e" path="res://Scene/Portal.tscn" id="11_6a5p4"]
 [ext_resource type="Texture2D" uid="uid://d1nj1dvce074w" path="res://Assets/exit.png" id="12_0gfnl"]
 [ext_resource type="Texture2D" uid="uid://bh3p3l8gf3qbi" path="res://Assets/rotate.png" id="13_kufhj"]
+[ext_resource type="AudioStream" uid="uid://chec55107ps6r" path="res://Assets/music/Main menu.mp3" id="15_a6mvv"]
+[ext_resource type="AudioStream" uid="uid://bn2oriu7rtsyc" path="res://Assets/music/ui hover.mp3" id="16_s81y4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0gfnl"]
 shader = ExtResource("2_6a5p4")
@@ -380,7 +382,7 @@ shader = SubResource("Shader_xju4f")
 [node name="World" type="Node2D" unique_id=1666401308]
 position = Vector2(351, 200)
 
-[node name="AnyoneNeedSomeSpaceBackgroundsForTheirGamesHeresAV03Td1247Uijw91" type="Sprite2D" parent="." unique_id=1020732015]
+[node name="background" type="Sprite2D" parent="." unique_id=1020732015]
 position = Vector2(198.99998, 105)
 scale = Vector2(0.09646587, 0.08993056)
 texture = ExtResource("1_h7cfj")
@@ -416,34 +418,41 @@ script = SubResource("GDScript_6a5p4")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer" unique_id=986735436]
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1112.0
+offset_left = -50.0
 offset_top = 11.0
-offset_right = 472.0
-offset_bottom = -125.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 462.0
+offset_bottom = 523.0
+grow_horizontal = 0
 scale = Vector2(0.065, 0.065)
 texture_normal = ExtResource("12_0gfnl")
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer" unique_id=1010469828]
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1113.0
-offset_top = 55.000004
-offset_right = 473.0
-offset_bottom = -81.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -48.0
+offset_top = 53.999996
+offset_right = 464.0
+offset_bottom = 566.0
+grow_horizontal = 0
 scale = Vector2(0.06, 0.06)
 texture_normal = ExtResource("13_kufhj")
 
 [node name="Portal" parent="." unique_id=1567927448 instance=ExtResource("11_6a5p4")]
 position = Vector2(317, 5)
 scale = Vector2(0.40625, 0.40625)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1782129282]
+stream = ExtResource("15_a6mvv")
+autoplay = true
+parameters/looping = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1300457701]
+stream = ExtResource("16_s81y4")
+volume_db = 12.581
 
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton2" to="CanvasLayer" method="_on_texture_button_2_pressed"]

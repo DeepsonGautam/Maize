@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://6mtmfngwh0r5" path="res://Assets/tile set2/1 Tiles/Tile_18.png" id="5_ihoyb"]
 [ext_resource type="PackedScene" uid="uid://bg5iw2mor7c8e" path="res://Scene/Portal.tscn" id="6_ihoyb"]
 [ext_resource type="PackedScene" uid="uid://coesdes61bru8" path="res://Scene/character_body_2d.tscn" id="7_tyj58"]
+[ext_resource type="AudioStream" uid="uid://chec55107ps6r" path="res://Assets/music/Main menu.mp3" id="11_ar7p2"]
 
 [sub_resource type="Shader" id="Shader_xju4f"]
 code = "shader_type canvas_item;
@@ -90,28 +91,26 @@ script = SubResource("GDScript_3ejuf")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer" unique_id=2046840713]
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1105.0
+offset_left = -50.0
 offset_top = 11.0
-offset_right = 1105.0
-offset_bottom = 11.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 462.0
+offset_bottom = 523.0
+grow_horizontal = 0
 scale = Vector2(0.065, 0.065)
 texture_normal = ExtResource("3_adjqv")
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer" unique_id=1244805280]
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1113.0
-offset_top = 55.000004
-offset_right = 473.0
-offset_bottom = -81.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -48.0
+offset_top = 54.0
+offset_right = 464.0
+offset_bottom = 566.0
+grow_horizontal = 0
 scale = Vector2(0.06, 0.06)
 texture_normal = ExtResource("4_adjqv")
 
@@ -134,6 +133,11 @@ position = Vector2(513, 383)
 zoom = Vector2(5, 5)
 limit_enabled = false
 position_smoothing_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=219279924]
+stream = ExtResource("11_ar7p2")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton2" to="CanvasLayer" method="_on_texture_button_2_pressed"]

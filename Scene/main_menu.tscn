@@ -6,6 +6,9 @@
 [ext_resource type="FontFile" uid="uid://52fdw542q64j" path="res://Assets/Title/Kaijuz.otf" id="3_hii65"]
 [ext_resource type="Texture2D" uid="uid://cvu0yojfm6upk" path="res://Assets/portal/sprite-sheet.png" id="4_kqsxi"]
 [ext_resource type="Texture2D" uid="uid://cpff6vdfrgvts" path="res://Assets/Pack-Slimes v2.0/Characters (100x100)/Slime Green/idle.png" id="5_hptlk"]
+[ext_resource type="AudioStream" uid="uid://cu63qynfe4kdx" path="res://Assets/music/Ambient.mp3" id="7_s2f1d"]
+[ext_resource type="AudioStream" uid="uid://bn2oriu7rtsyc" path="res://Assets/music/ui hover.mp3" id="8_s2f1d"]
+[ext_resource type="AudioStream" uid="uid://resx71d01qnh" path="res://Assets/music/button click.mp3" id="9_ejkra"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqads"]
 texture = ExtResource("2_hptlk")
@@ -224,5 +227,18 @@ sprite_frames = SubResource("SpriteFrames_pvidh")
 animation = &"player"
 frame_progress = 0.85047114
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2058204181]
+stream = ExtResource("7_s2f1d")
+autoplay = true
+parameters/looping = true
+
+[node name="hover" type="AudioStreamPlayer" parent="." unique_id=1083158847]
+stream = ExtResource("8_s2f1d")
+
+[node name="clicked" type="AudioStreamPlayer" parent="." unique_id=484870716]
+stream = ExtResource("9_ejkra")
+
+[connection signal="mouse_entered" from="levels" to="." method="_on_levels_mouse_entered"]
 [connection signal="pressed" from="levels" to="." method="_on_levels_pressed"]
+[connection signal="mouse_entered" from="exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
