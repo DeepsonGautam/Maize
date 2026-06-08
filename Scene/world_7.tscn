@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwf82eixg2sbs"]
 
-[ext_resource type="Texture2D" uid="uid://17oo02q13nqx" path="res://Assets/anyone-need-some-space-backgrounds-for-their-games-heres-a-v0-3td1247uijw91.jpg" id="1_wkk6o"]
+[ext_resource type="Texture2D" uid="uid://17oo02q13nqx" path="res://Assets/random/anyone-need-some-space-backgrounds-for-their-games-heres-a-v0-3td1247uijw91.jpg" id="1_wkk6o"]
 [ext_resource type="Shader" uid="uid://l47qumnq8qvl" path="res://Scripts/world_5.gdshader" id="2_yvk88"]
 [ext_resource type="Texture2D" uid="uid://dvv1ihvyr6dx7" path="res://Assets/tile set2/1 Tiles/Tile_15.png" id="3_g430t"]
 [ext_resource type="Texture2D" uid="uid://dv2i5qwnlidki" path="res://Assets/tile set2/1 Tiles/Tile_24.png" id="4_5twca"]
@@ -9,10 +9,12 @@
 [ext_resource type="Script" uid="uid://b74ywcoigk7c8" path="res://Scripts/canvas_layer7.gd" id="7_g430t"]
 [ext_resource type="Shader" uid="uid://cokh6uxq2wp21" path="res://Scripts/vignette.gdshader" id="7_hkee0"]
 [ext_resource type="PackedScene" uid="uid://coesdes61bru8" path="res://Scene/character_body_2d.tscn" id="8_qc82p"]
-[ext_resource type="Texture2D" uid="uid://d1nj1dvce074w" path="res://Assets/exit.png" id="9_5twca"]
+[ext_resource type="Texture2D" uid="uid://d1nj1dvce074w" path="res://Assets/random/exit.png" id="9_5twca"]
 [ext_resource type="PackedScene" uid="uid://bg5iw2mor7c8e" path="res://Scene/Portal.tscn" id="9_jkem6"]
-[ext_resource type="Texture2D" uid="uid://bh3p3l8gf3qbi" path="res://Assets/rotate.png" id="10_5twca"]
+[ext_resource type="Texture2D" uid="uid://bh3p3l8gf3qbi" path="res://Assets/random/rotate.png" id="10_5twca"]
+[ext_resource type="FontFile" uid="uid://bnev11iisxqrs" path="res://Assets/maize_font/Quadrillion Sb.otf" id="11_hkee0"]
 [ext_resource type="AudioStream" uid="uid://chec55107ps6r" path="res://Assets/music/Main menu.mp3" id="13_1d4uj"]
+[ext_resource type="AudioStream" uid="uid://eayfhy3tbfop" path="res://Assets/music/level_change.mp3" id="14_hh1h0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lx5bb"]
 shader = ExtResource("2_yvk88")
@@ -418,6 +420,10 @@ sources/3 = SubResource("TileSetAtlasSource_w4tw7")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1oy5e"]
 shader = ExtResource("7_hkee0")
 
+[sub_resource type="LabelSettings" id="LabelSettings_qc82p"]
+font = ExtResource("11_hkee0")
+font_size = 14
+
 [node name="World7" type="Node2D" unique_id=1407320162]
 
 [node name="AnyoneNeedSomeSpaceBackgroundsForTheirGamesHeresAV03Td1247Uijw91" type="Sprite2D" parent="." unique_id=1075655982]
@@ -468,6 +474,19 @@ grow_horizontal = 0
 scale = Vector2(0.06, 0.06)
 texture_normal = ExtResource("10_5twca")
 
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1790913870]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.5
+offset_top = 22.0
+offset_right = 31.5
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+text = "Level 3"
+label_settings = SubResource("LabelSettings_qc82p")
+
 [node name="CharacterBody2D" parent="." unique_id=1810743037 instance=ExtResource("8_qc82p")]
 position = Vector2(6, -109)
 
@@ -485,6 +504,10 @@ scale = Vector2(0.40625, 0.40625)
 stream = ExtResource("13_1d4uj")
 autoplay = true
 parameters/looping = true
+
+[node name="Portal2" type="AudioStreamPlayer" parent="." unique_id=2118319711]
+stream = ExtResource("14_hh1h0")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton2" to="CanvasLayer" method="_on_texture_button_2_pressed"]

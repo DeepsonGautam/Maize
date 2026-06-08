@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cvu0yojfm6upk" path="res://Assets/portal/sprite-sheet.png" id="2_6pdfc"]
 [ext_resource type="Texture2D" uid="uid://cpff6vdfrgvts" path="res://Assets/Pack-Slimes v2.0/Characters (100x100)/Slime Green/idle.png" id="3_gys2o"]
 [ext_resource type="FontFile" uid="uid://52fdw542q64j" path="res://Assets/Title/Kaijuz.otf" id="3_w11ju"]
-[ext_resource type="Texture2D" uid="uid://dll3r7oncj5mq" path="res://Assets/Second.png" id="4_6pdfc"]
+[ext_resource type="Texture2D" uid="uid://dll3r7oncj5mq" path="res://Assets/random/Second.png" id="4_6pdfc"]
 [ext_resource type="FontFile" uid="uid://b2ui0ocjl164w" path="res://Assets/numbers/KR Toon Numbers.ttf" id="6_w11ju"]
 [ext_resource type="AudioStream" uid="uid://cu63qynfe4kdx" path="res://Assets/music/Ambient.mp3" id="7_6u6v1"]
 [ext_resource type="AudioStream" uid="uid://resx71d01qnh" path="res://Assets/music/button click.mp3" id="8_efman"]
@@ -327,6 +327,20 @@ parameters/looping = true
 [node name="clicked" type="AudioStreamPlayer" parent="." unique_id=1641018219]
 stream = ExtResource("8_efman")
 
+[node name="Back" type="Button" parent="." unique_id=1470224177]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 28.0
+offset_right = 92.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_w11ju")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_gys2o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w11ju")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6u6v1")
+text = "Back"
+
 [connection signal="pressed" from="HBoxContainer/1" to="." method="_on__pressed"]
 [connection signal="pressed" from="HBoxContainer/2" to="." method="_on__pressed2"]
 [connection signal="pressed" from="HBoxContainer/3" to="." method="_on__pressed3"]
@@ -335,3 +349,4 @@ stream = ExtResource("8_efman")
 [connection signal="pressed" from="HBoxContainer2/6" to="." method="_on__pressed6"]
 [connection signal="pressed" from="HBoxContainer2/7" to="." method="_on__pressed7"]
 [connection signal="pressed" from="HBoxContainer2/8" to="." method="_on__pressed8"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

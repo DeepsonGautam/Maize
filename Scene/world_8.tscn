@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4hjre27o87u1"]
 
-[ext_resource type="Texture2D" uid="uid://17oo02q13nqx" path="res://Assets/anyone-need-some-space-backgrounds-for-their-games-heres-a-v0-3td1247uijw91.jpg" id="1_0qehf"]
+[ext_resource type="Texture2D" uid="uid://17oo02q13nqx" path="res://Assets/random/anyone-need-some-space-backgrounds-for-their-games-heres-a-v0-3td1247uijw91.jpg" id="1_0qehf"]
 [ext_resource type="Shader" uid="uid://l47qumnq8qvl" path="res://Scripts/world_5.gdshader" id="2_cdwk4"]
 [ext_resource type="Texture2D" uid="uid://o581dox6pukf" path="res://Assets/tile set1/1 Tiles/Tile_15.png" id="3_qv7ru"]
 [ext_resource type="Texture2D" uid="uid://5mtphvb2vi0s" path="res://Assets/tile set1/1 Tiles/Tile_24.png" id="4_5b8cp"]
@@ -9,12 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://d3o72hpvm5cv2" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="7_cdwk4"]
 [ext_resource type="Shader" uid="uid://cokh6uxq2wp21" path="res://Scripts/vignette.gdshader" id="7_dq1x1"]
 [ext_resource type="PackedScene" uid="uid://coesdes61bru8" path="res://Scene/character_body_2d.tscn" id="8_p7iww"]
-[ext_resource type="Texture2D" uid="uid://ccvsvuje3efls" path="res://Assets/Textures-16.png" id="8_qv7ru"]
+[ext_resource type="Texture2D" uid="uid://ccvsvuje3efls" path="res://Assets/random/Textures-16.png" id="8_qv7ru"]
 [ext_resource type="PackedScene" uid="uid://bg5iw2mor7c8e" path="res://Scene/Portal.tscn" id="9_6bsqd"]
 [ext_resource type="Script" uid="uid://pkt6qknvl7sc" path="res://Scripts/canvas_layer8.gd" id="9_qfe6g"]
-[ext_resource type="Texture2D" uid="uid://d1nj1dvce074w" path="res://Assets/exit.png" id="11_f6nah"]
-[ext_resource type="Texture2D" uid="uid://bh3p3l8gf3qbi" path="res://Assets/rotate.png" id="12_f6nah"]
+[ext_resource type="Texture2D" uid="uid://d1nj1dvce074w" path="res://Assets/random/exit.png" id="11_f6nah"]
+[ext_resource type="Texture2D" uid="uid://bh3p3l8gf3qbi" path="res://Assets/random/rotate.png" id="12_f6nah"]
+[ext_resource type="FontFile" uid="uid://bnev11iisxqrs" path="res://Assets/maize_font/Quadrillion Sb.otf" id="13_6bsqd"]
 [ext_resource type="AudioStream" uid="uid://chec55107ps6r" path="res://Assets/music/Main menu.mp3" id="15_dq1x1"]
+[ext_resource type="AudioStream" uid="uid://eayfhy3tbfop" path="res://Assets/music/level_change.mp3" id="16_p7iww"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hobvq"]
 shader = ExtResource("2_cdwk4")
@@ -1007,6 +1009,10 @@ sources/5 = SubResource("TileSetAtlasSource_5b8cp")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f0880"]
 shader = ExtResource("7_dq1x1")
 
+[sub_resource type="LabelSettings" id="LabelSettings_hobvq"]
+font = ExtResource("13_6bsqd")
+font_size = 14
+
 [node name="World8" type="Node2D" unique_id=1887946862]
 
 [node name="AnyoneNeedSomeSpaceBackgroundsForTheirGamesHeresAV03Td1247Uijw91" type="Sprite2D" parent="." unique_id=775076638]
@@ -1058,6 +1064,19 @@ grow_horizontal = 0
 scale = Vector2(0.06, 0.06)
 texture_normal = ExtResource("12_f6nah")
 
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1421621733]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.5
+offset_top = 22.0
+offset_right = 31.5
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+text = "Level 5"
+label_settings = SubResource("LabelSettings_hobvq")
+
 [node name="CharacterBody2D" parent="." unique_id=1810743037 instance=ExtResource("8_p7iww")]
 position = Vector2(133, -94)
 
@@ -1075,6 +1094,10 @@ scale = Vector2(0.40625, 0.40625)
 stream = ExtResource("15_dq1x1")
 autoplay = true
 parameters/looping = true
+
+[node name="Portal2" type="AudioStreamPlayer" parent="." unique_id=1612029530]
+stream = ExtResource("16_p7iww")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton2" to="CanvasLayer" method="_on_texture_button_2_pressed"]

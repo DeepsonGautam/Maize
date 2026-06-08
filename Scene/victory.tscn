@@ -1,0 +1,237 @@
+[gd_scene format=3 uid="uid://rar24clny7du"]
+
+[ext_resource type="Texture2D" uid="uid://dll3r7oncj5mq" path="res://Assets/random/Second.png" id="1_dtmfr"]
+[ext_resource type="Script" uid="uid://b18cecwhwnn61" path="res://Scripts/victory.gd" id="1_udblh"]
+[ext_resource type="FontFile" uid="uid://6tvw50jfrqcv" path="res://Assets/maize_font/Quadrillion Sb It.otf" id="2_udblh"]
+[ext_resource type="FontFile" uid="uid://52fdw542q64j" path="res://Assets/Title/Kaijuz.otf" id="3_7yvlb"]
+[ext_resource type="Texture2D" uid="uid://cvu0yojfm6upk" path="res://Assets/portal/sprite-sheet.png" id="4_4wpbc"]
+[ext_resource type="Texture2D" uid="uid://cpff6vdfrgvts" path="res://Assets/Pack-Slimes v2.0/Characters (100x100)/Slime Green/idle.png" id="5_h3byq"]
+[ext_resource type="AudioStream" uid="uid://cu63qynfe4kdx" path="res://Assets/music/Ambient.mp3" id="6_ktswl"]
+[ext_resource type="AudioStream" uid="uid://bn2oriu7rtsyc" path="res://Assets/music/ui hover.mp3" id="7_a3my1"]
+[ext_resource type="AudioStream" uid="uid://resx71d01qnh" path="res://Assets/music/button click.mp3" id="8_q42ag"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xeoo0"]
+texture = ExtResource("1_dtmfr")
+modulate_color = Color(0.365339, 0.365339, 0.365339, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flqtd"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnx7w"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6su1q"]
+bg_color = Color(0.32049134, 0.32049137, 0.32049137, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_44o05"]
+font = ExtResource("3_7yvlb")
+font_size = 68
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvidh"]
+atlas = ExtResource("4_4wpbc")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hptlk"]
+atlas = ExtResource("4_4wpbc")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqads"]
+atlas = ExtResource("4_4wpbc")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2f1d"]
+atlas = ExtResource("4_4wpbc")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejkra"]
+atlas = ExtResource("4_4wpbc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yok32"]
+atlas = ExtResource("4_4wpbc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klvvj"]
+atlas = ExtResource("4_4wpbc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3h1oh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvidh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hptlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqads")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2f1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejkra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yok32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klvvj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47k5r"]
+atlas = ExtResource("5_h3byq")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hag5k"]
+atlas = ExtResource("5_h3byq")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ckpx"]
+atlas = ExtResource("5_h3byq")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shpw1"]
+atlas = ExtResource("5_h3byq")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dndt8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47k5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hag5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ckpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shpw1")
+}],
+"loop": true,
+"name": &"player",
+"speed": 5.0
+}]
+
+[node name="Victory" type="Control" unique_id=919234498]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_udblh")
+
+[node name="Panel" type="Panel" parent="." unique_id=1339177380]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xeoo0")
+
+[node name="levels" type="Button" parent="." unique_id=1683782349]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -46.5
+offset_right = 95.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_udblh")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqtd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qnx7w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6su1q")
+text = "LEVELS"
+
+[node name="exit" type="Button" parent="." unique_id=489775194]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = 36.5
+offset_right = 95.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_udblh")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqtd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qnx7w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6su1q")
+text = "EXIT"
+
+[node name="Label" type="Label" parent="." unique_id=1061699559]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -204.5
+offset_right = 121.0
+offset_bottom = -133.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "! VICTorY !"
+label_settings = SubResource("LabelSettings_44o05")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1857223974]
+
+[node name="portal" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1812173601]
+position = Vector2(291, 444)
+scale = Vector2(2.15625, 2.15625)
+sprite_frames = SubResource("SpriteFrames_3h1oh")
+animation = &"idle"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=2094425887]
+position = Vector2(1044, 300)
+scale = Vector2(1.92, 1.92)
+sprite_frames = SubResource("SpriteFrames_dndt8")
+animation = &"player"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=70722862]
+stream = ExtResource("6_ktswl")
+autoplay = true
+parameters/looping = true
+
+[node name="hover" type="AudioStreamPlayer" parent="." unique_id=2073569276]
+stream = ExtResource("7_a3my1")
+
+[node name="clicked" type="AudioStreamPlayer" parent="." unique_id=1997593788]
+stream = ExtResource("8_q42ag")

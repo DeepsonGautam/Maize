@@ -30,3 +30,7 @@ func _on__pressed7() -> void:
 func _on__pressed8() -> void:
 	get_tree().change_scene_to_file("res://Scene/world_4.tscn")
 	$clicked.play()
+func _on_back_pressed() -> void:
+	$clicked.play()
+	get_tree().change_scene_to_file("res://Scene/main_menu.tscn")
+	

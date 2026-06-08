@@ -1,21 +1,27 @@
 [gd_scene format=3 uid="uid://8ouysxwp0aj8"]
 
-[ext_resource type="Texture2D" uid="uid://17oo02q13nqx" path="res://Assets/anyone-need-some-space-backgrounds-for-their-games-heres-a-v0-3td1247uijw91.jpg" id="1_fjxmq"]
+[ext_resource type="Texture2D" uid="uid://17oo02q13nqx" path="res://Assets/random/anyone-need-some-space-backgrounds-for-their-games-heres-a-v0-3td1247uijw91.jpg" id="1_fjxmq"]
 [ext_resource type="Script" uid="uid://ckdvwenfmfa8l" path="res://Scripts/canvas_layer4.gd" id="2_devcx"]
 [ext_resource type="Shader" uid="uid://cokh6uxq2wp21" path="res://Scripts/vignette.gdshader" id="2_lp2vk"]
 [ext_resource type="PackedScene" uid="uid://bg5iw2mor7c8e" path="res://Scene/Portal.tscn" id="3_b5rnj"]
 [ext_resource type="PackedScene" uid="uid://coesdes61bru8" path="res://Scene/character_body_2d.tscn" id="4_hc020"]
-[ext_resource type="Texture2D" uid="uid://d1nj1dvce074w" path="res://Assets/exit.png" id="4_xx4lv"]
+[ext_resource type="Texture2D" uid="uid://d1nj1dvce074w" path="res://Assets/random/exit.png" id="4_xx4lv"]
 [ext_resource type="Shader" uid="uid://bkxqpa8dcu2tu" path="res://Scripts/world_4.gdshader" id="5_27m1x"]
 [ext_resource type="Texture2D" uid="uid://dvv1ihvyr6dx7" path="res://Assets/tile set2/1 Tiles/Tile_15.png" id="5_lp2vk"]
-[ext_resource type="Texture2D" uid="uid://bh3p3l8gf3qbi" path="res://Assets/rotate.png" id="5_xx4lv"]
+[ext_resource type="Texture2D" uid="uid://bh3p3l8gf3qbi" path="res://Assets/random/rotate.png" id="5_xx4lv"]
 [ext_resource type="Texture2D" uid="uid://dv2i5qwnlidki" path="res://Assets/tile set2/1 Tiles/Tile_24.png" id="6_27m1x"]
+[ext_resource type="FontFile" uid="uid://bnev11iisxqrs" path="res://Assets/maize_font/Quadrillion Sb.otf" id="6_fxtuv"]
 [ext_resource type="Texture2D" uid="uid://6mtmfngwh0r5" path="res://Assets/tile set2/1 Tiles/Tile_18.png" id="7_sdcc5"]
 [ext_resource type="Texture2D" uid="uid://dbpb8wf8mfhp1" path="res://Assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="8_devcx"]
 [ext_resource type="AudioStream" uid="uid://chec55107ps6r" path="res://Assets/music/Main menu.mp3" id="13_edtlb"]
+[ext_resource type="AudioStream" uid="uid://eayfhy3tbfop" path="res://Assets/music/level_change.mp3" id="14_g13d3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lp2vk"]
 shader = ExtResource("2_lp2vk")
+
+[sub_resource type="LabelSettings" id="LabelSettings_yrqd6"]
+font = ExtResource("6_fxtuv")
+font_size = 14
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sdcc5"]
 shader = ExtResource("5_27m1x")
@@ -352,6 +358,19 @@ grow_horizontal = 0
 scale = Vector2(0.06, 0.06)
 texture_normal = ExtResource("5_xx4lv")
 
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=524802035]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.5
+offset_top = 22.0
+offset_right = 31.5
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+text = "Level 8"
+label_settings = SubResource("LabelSettings_yrqd6")
+
 [node name="Portal" parent="." unique_id=1349021387 instance=ExtResource("3_b5rnj")]
 position = Vector2(652, 310.99997)
 scale = Vector2(0.40625, 0.40625)
@@ -376,6 +395,10 @@ layer_0/tile_data = PackedInt32Array(-458771, 786435, 14, -458770, 786435, 14, -
 stream = ExtResource("13_edtlb")
 autoplay = true
 parameters/looping = true
+
+[node name="Portal2" type="AudioStreamPlayer" parent="." unique_id=238396493]
+stream = ExtResource("14_g13d3")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton2" to="CanvasLayer" method="_on_texture_button_2_pressed"]

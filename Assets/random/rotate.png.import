@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh3p3l8gf3qbi"
-path="res://.godot/imported/rotate.png-0cc5fa04364f9515ba3c8801a2dd1eaf.ctex"
+path="res://.godot/imported/rotate.png-f252d01e3d6ee04a105ceeeb2794d27b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/rotate.png"
-dest_files=["res://.godot/imported/rotate.png-0cc5fa04364f9515ba3c8801a2dd1eaf.ctex"]
+source_file="res://Assets/random/rotate.png"
+dest_files=["res://.godot/imported/rotate.png-f252d01e3d6ee04a105ceeeb2794d27b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://17oo02q13nqx"
-path="res://.godot/imported/anyone-need-some-space-backgrounds-for-their-games-heres-a-v0-3td1247uijw91.jpg-cd10b3779f5235c4b98e6df33638f3ac.ctex"
+uid="uid://ccvsvuje3efls"
+path="res://.godot/imported/Textures-16.png-8059a0bfb21f2a9964f18b7920fe15fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/anyone-need-some-space-backgrounds-for-their-games-heres-a-v0-3td1247uijw91.jpg"
-dest_files=["res://.godot/imported/anyone-need-some-space-backgrounds-for-their-games-heres-a-v0-3td1247uijw91.jpg-cd10b3779f5235c4b98e6df33638f3ac.ctex"]
+source_file="res://Assets/random/Textures-16.png"
+dest_files=["res://.godot/imported/Textures-16.png-8059a0bfb21f2a9964f18b7920fe15fd.ctex"]
 
 [params]
 

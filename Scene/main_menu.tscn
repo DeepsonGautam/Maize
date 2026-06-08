@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8pgv8rs4hhop" path="res://Scripts/main_menu.gd" id="1_pvidh"]
 [ext_resource type="FontFile" uid="uid://6tvw50jfrqcv" path="res://Assets/maize_font/Quadrillion Sb It.otf" id="2_87ipw"]
-[ext_resource type="Texture2D" uid="uid://dll3r7oncj5mq" path="res://Assets/Second.png" id="2_hptlk"]
+[ext_resource type="Texture2D" uid="uid://dll3r7oncj5mq" path="res://Assets/random/Second.png" id="2_hptlk"]
 [ext_resource type="FontFile" uid="uid://52fdw542q64j" path="res://Assets/Title/Kaijuz.otf" id="3_hii65"]
 [ext_resource type="Texture2D" uid="uid://cvu0yojfm6upk" path="res://Assets/portal/sprite-sheet.png" id="4_kqsxi"]
 [ext_resource type="Texture2D" uid="uid://cpff6vdfrgvts" path="res://Assets/Pack-Slimes v2.0/Characters (100x100)/Slime Green/idle.png" id="5_hptlk"]
@@ -208,7 +208,7 @@ offset_right = 121.0
 offset_bottom = -133.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "! Maize !"
+text = "! Maze !"
 label_settings = SubResource("LabelSettings_87ipw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=458064270]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bski5a51me0aa"
-path="res://.godot/imported/maize.png-e8ad118a6ef8321f1575ceeed6198bb9.ctex"
+path="res://.godot/imported/maize.png-0e2bc840456884f9c5ef332247e6926c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/maize.png"
-dest_files=["res://.godot/imported/maize.png-e8ad118a6ef8321f1575ceeed6198bb9.ctex"]
+source_file="res://Assets/random/maize.png"
+dest_files=["res://.godot/imported/maize.png-0e2bc840456884f9c5ef332247e6926c.ctex"]
 
 [params]
 
