@@ -12,7 +12,7 @@ Sleepy Maze is a maze adventure game where you play as a sleepy character and tr
 
 ## Controls
 
-* Arrow Keys — Move
+* Arrow Keys -- Move
 
 ## Goal
 
