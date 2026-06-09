@@ -1,4 +1,4 @@
-<img width="1362" height="739" alt="maize" src="https://github.com/user-attachments/assets/dfed406a-c4b0-4aa2-8e8e-b8bf739628d1" /><img width="1356" height="735" alt="1" src="https://github.com/user-attachments/assets/bccc0f22-fe4d-471e-b343-05cd05610e1f" /># Maze
+### Maze
 
 Maze is a adventure game where you play as a sleepy character and travel through 8 difficult levels. The game features smooth animations, a slight horror theme, responsive controls, and a clean UI. You can select the levels you want to play through the level selection menu. You can choose from the easiest level 1 to the boss level 8. Each level gets progressively harder and the mazes are designed to genuinely challenge you. 
 
